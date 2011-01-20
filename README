@@ -1,0 +1,8 @@
+This project is intended to be a simple, adaptable JavaScript library
+for developers who want to create JavaScript-based endpoints for KNS.
+These endpoints might be web sites, mobile apps (through frameworks
+like PhoneGap or on platforms like webOS), or anything else in which
+JavaScript is the main language being used.
+
+At present, it is very simple. Any suggestions or improvements are welcome.
+
