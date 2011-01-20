@@ -19,6 +19,9 @@
  */
 function sendEvent(domain, event, ruleset, callback) {
     var url = "http://cs.kobj.net/blue/event/" + domain + "/" + event + "/" + ruleset;
+    //For debugging. Typically the browser disallows an ajax request like this
+    // going to a different host. Need to find a workaround.
+    console.log(url);
     $.ajax({
         url: url,
         success: callback
