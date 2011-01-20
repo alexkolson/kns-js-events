@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title>Testing the KNS JS Events library</title>
+    
+    <script type="text/javascript" language="javascript" src="jquery-1.4.4.min.js"></script>
+    <script type="text/javascript" language="javascript" src="kns-js-events.js"></script>
+    <script type="text/javascript" language="javascript">
+        function send() {
+            sendEvent("test", "started", "a163x36",
+                function(data) {
+                    $('#result').html(data);
+                });
+        }
+    </script>
+
+    <style type="text/css">
+        div#data {
+            font-family: monospace;
+            padding: 2px;
+            border: 1px solid silver;
+        }
+    </style>
+
+</head>
+<body>
+    <p><input type="button" onclick="send();" value="Send event" /></p>
+    <div id="data">Click the button to load this...</div>
+</body>
+</html>
+
