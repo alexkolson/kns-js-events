@@ -17,8 +17,20 @@
  * - Some way of working around cross-site scripting for web apps
  *    (that won't be a concern for PhoneGap, etc.)
  */
-function sendEvent(domain, event, ruleset, callback) {
-    var url = "http://cs.kobj.net/blue/event/" + domain + "/" + event + "/" + ruleset;
+
+function KNS(config) {
+    this.app_configs = config.app_configs;
+    this.event_domain = this.event_domain;
+    this.callback = typeof(config.callback) !== 'undefined' ? config.callback : false;
+    this.kns_system_version = typeof(config.kns_system_version) !== 'undefined' ? config.kns_system_version : "blue";
+    this.base_event_url = "https://cs.kobj.net/" + this.kns_system_version + "/" + this.event_domain + "/";
+}
+
+KNS.prototype.url_from_struct(struct) {
+    var urls = [];
+}
+
+KNS.prototype.signal_event = function()  {
     //For debugging. Typically the browser disallows an ajax request like this
     // going to a different host. Need to find a workaround.
     console.log(url);
@@ -26,5 +38,4 @@ function sendEvent(domain, event, ruleset, callback) {
         url: url,
         success: callback
     });
-}
-
+};
